@@ -16,8 +16,8 @@ module.exports = function runLogic(eventData) {
 
     client.runFlow({
     	streams: {
-    		main: 'greeting',
-    		greeting: [provideOptions],
+    		main: 'response_greeting',
+    		response_greeting: [provideOptions],
     	}
     })
 
