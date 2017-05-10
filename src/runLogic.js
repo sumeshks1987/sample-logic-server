@@ -3,7 +3,7 @@ const InitClient = require('initai-node')
 module.exports = function runLogic(eventData) {
   return new Promise((resolve) => {
     const client = InitClient.create(eventData, {succeed: resolve})
-
+    console.log("Test");
     const provideOptions = client.createStep({
     	satisfied(){ return false },
 
