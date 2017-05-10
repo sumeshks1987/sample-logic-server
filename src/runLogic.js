@@ -4,7 +4,7 @@ module.exports = function runLogic(eventData) {
   return new Promise((resolve) => {
     const client = InitClient.create(eventData, {succeed: resolve})
     
-    const provideOptions = client.createStep({
+    const response_greeting = client.createStep({
     	satisfied(){ return false },
 
     	promt() {
@@ -17,7 +17,7 @@ module.exports = function runLogic(eventData) {
 
     client.runFlow({
     	streams: {
-    		response_greeting: provideOptions,
+    		response_greeting: response_greeting,
     	},
     	classifications: {
     		greeting: 'response_greeting'
