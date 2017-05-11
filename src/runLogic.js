@@ -67,6 +67,50 @@ module.exports = function runLogic(eventData) {
     	}
     })
 
+    const accounts = client.createStep({
+    	satisfied(){ return false },
+
+    	prompt() {
+    		console.log("Test6");
+    		client.addTextResponse('Please select the type of account')
+    		client.addTextResponse('Individual Savings Account,Defence Salary Account,Corporate Salary Account')
+    		client.done()
+    	}
+    })
+
+    const deposits = client.createStep({
+    	satisfied(){ return false },
+
+    	prompt() {
+    		console.log("Test7");
+    		client.addTextResponse('Please select the type of deposit')
+    		client.addTextResponse('Fixed Deposit,Sweep In/Out Deposit,Regular Recurring Deposit,Senior Citizen Scheme,Young Saver Deposit,Deposit Plus,Value Added Recurring Deposit')
+    		client.done()
+    	}
+    })
+
+    const loans = client.createStep({
+    	satisfied(){ return false },
+
+    	prompt() {
+    		console.log("Test8");
+    		client.addTextResponse('Please select the loan type')
+    		client.addTextResponse('Loan Against Property,Home Loan,Personal Loan,Car Loan,Two Wheeler Loan,Gold Loan,Loan Against Securities,Loan on Credit Cards,Indus Kisan')
+    		client.done()
+    	}
+    })
+
+    const insurance = client.createStep({
+    	satisfied(){ return false },
+
+    	prompt() {
+    		console.log("Test9");
+    		client.addTextResponse('Please select the type of insurance')
+    		client.addTextResponse('Health Insurance,General Insurance,Life Insurance,Card Protection Plan')
+    		client.done()
+    	}
+    })
+
     client.runFlow({
     	streams: {
     		main: [response_greeting],
@@ -75,6 +119,10 @@ module.exports = function runLogic(eventData) {
     		nriBanking: [nriBanking],
     		branches: [branches],
     		customerSupport: [customerSupport],
+    		accounts: [accounts],
+    		deposits: [deposits],
+    		loans: [loans],
+    		insurance: [insurance],
     		response_greeting: [response_greeting],
     	},
     	classifications: {
@@ -84,6 +132,10 @@ module.exports = function runLogic(eventData) {
     		option3: 'nriBanking',
     		option4: 'branches',
     		option5: 'customerSupport',
+    		option_pbaccounts: 'accounts',
+    		option_pbdeposits: 'deposits'
+    		option_pbloans: 'loans',
+    		option_pbinsurance: 'insurance'
     	}
     })
 
