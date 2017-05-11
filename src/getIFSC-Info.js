@@ -1,4 +1,3 @@
-//const fetchWeather = require('./getIFSC-Info')
 const InitClient = require('initai-node')
 
 module.exports = function runLogic(eventData) {
@@ -11,7 +10,7 @@ module.exports = function runLogic(eventData) {
     	prompt() {
     		console.log("Test");
     		client.addTextResponse('Hi there - how can I help you with IndusInd Bank related queries. Here are some quick links')
-    		client.addTextResponse('Personal Banking,Corporate Banking,NRI Banking,Branches,Customer Support')
+    		client.addTextResponse('IFSC Code,Branches,Personal Banking,Corporate Banking,NRI Banking,Customer Support')
     		client.done()
     	}
     })
