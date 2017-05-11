@@ -133,9 +133,9 @@ module.exports = function runLogic(eventData) {
     		option4: 'branches',
     		option5: 'customerSupport',
     		option_pbaccounts: 'accounts',
-    		option_pbdeposits: 'deposits'
+    		option_pbdeposits: 'deposits',
     		option_pbloans: 'loans',
-    		option_pbinsurance: 'insurance'
+    		option_pbinsurance: 'insurance',
     	}
     })
 
