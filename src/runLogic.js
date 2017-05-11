@@ -161,6 +161,7 @@ module.exports = function runLogic(eventData) {
     	classifications: {
     		greeting: 'response_greeting',
     		option1: 'personalBanking',
+    		cbtext: 'personalBanking',
     		option2: 'corporateBanking',
     		option3: 'nriBanking',
     		option4: 'branches',
