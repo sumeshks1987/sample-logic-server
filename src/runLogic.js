@@ -17,8 +17,8 @@ module.exports = function runLogic(eventData) {
 
     client.runFlow({
     	streams: {
-    		main: 'response_greeting',
-    		response_greeting: response_greeting,
+    		main: [response_greeting],
+    		response_greeting: [response_greeting],
     	},
     	classifications: {
     		greeting: 'response_greeting'
@@ -27,6 +27,6 @@ module.exports = function runLogic(eventData) {
 
     // Add your custom logic here!
     //client.addTextResponse('Responding from `runLogic.js`!')
-    //client.done()
+    client.done()
   })
 }
