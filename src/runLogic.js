@@ -123,7 +123,11 @@ module.exports = function runLogic(eventData) {
 
     	prompt() {
     		console.log("Test10");
-    		client.addTextResponse('Visit this URL for more details - http://www.indusind.com/content/home/personal-banking/products/accounts/individual-savings-account.html')
+    		if(client.getConversationState().type == "account"){
+    			client.addTextResponse('Visit this URL for more details - http://www.indusind.com/content/home/personal-banking/products/accounts/individual-savings-account.html')
+    		} else {
+    			client.addResponse('option_pbaccounts')
+    		}
     		client.done()
     	}
     })
@@ -174,7 +178,6 @@ module.exports = function runLogic(eventData) {
     		option4: 'branches',
     		option5: 'customerSupport',
     		option_pbaccounts: 'accounts',
-    		pbaccount_type_text: 'accounts',
     		option_pbdeposits: 'deposits',
     		option_pbloans: 'loans',
     		option_pbinsurance: 'insurance',
