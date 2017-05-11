@@ -7,7 +7,7 @@ module.exports = function runLogic(eventData) {
     const response_greeting = client.createStep({
     	satisfied(){ return false },
 
-    	promt() {
+    	prompt() {
     		console.log("Test");
     		client.addTextResponse('Hi, how can help you with IndusInd Bank related queries. Here are some quick links')
     		client.addTextResponse('IFSC Code,Branches,Personal Banking,Corporate Banking,NRI Banking,Customer Support')
