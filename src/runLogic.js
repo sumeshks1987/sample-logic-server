@@ -35,7 +35,7 @@ module.exports = function runLogic(eventData) {
     	},
     	classifications: {
     		greeting: 'response_greeting',
-    		Option1: 'personalBanking'
+    		option1: 'personalBanking'
     	}
     })
 
