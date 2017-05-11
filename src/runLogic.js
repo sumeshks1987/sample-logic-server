@@ -10,6 +10,7 @@ module.exports = function runLogic(eventData) {
 
     	prompt() {
     		console.log("Test");
+    		client.updateConversationState('option','select')
     		client.addTextResponse('Hi there - how can I help you with IndusInd Bank related queries. Here are some quick links')
     		client.addTextResponse('Personal Banking,Corporate Banking,NRI Banking,Branches,Customer Support')
     		client.done()
@@ -21,6 +22,7 @@ module.exports = function runLogic(eventData) {
 
     	prompt() {
     		console.log("Test1");
+    		client.updateConversationState('selected','personal banking')
     		client.addTextResponse('Choose from the below given options')
     		client.addTextResponse('Accounts,Deposits,Loans,Insurance,Cards,Super Saver Pack,Investments,Foreign Exchange,Financial Inclusion')
     		client.done()
@@ -32,6 +34,7 @@ module.exports = function runLogic(eventData) {
 
     	prompt() {
     		console.log("Test2");
+    		client.updateConversationState('selected','corporate banking')
     		client.addTextResponse('Visit this URL for more details - http://www.indusind.com/corporate-banking.html')
     		client.done()
     	}
@@ -42,6 +45,7 @@ module.exports = function runLogic(eventData) {
 
     	prompt() {
     		console.log("Test3");
+    		client.updateConversationState('selected','nri banking')
     		client.addTextResponse('Visit this URL for more details - http://www.indusind.com/nri-banking.html')
     		client.done()
     	}
@@ -52,6 +56,7 @@ module.exports = function runLogic(eventData) {
 
     	prompt() {
     		console.log("Test4");
+    		client.updateConversationState('selected','branches')
     		client.addTextResponse('Visit this URL for more details - http://www.indusind.com/content/home/branch-details.html')
     		client.done()
     	}
@@ -62,6 +67,7 @@ module.exports = function runLogic(eventData) {
 
     	prompt() {
     		console.log("Test5");
+    		client.updateConversationState('selected','customer support')
     		client.addTextResponse('Visit this URL for more details - http://www.indusind.com/footer/customer-care/contact-us.html')
     		client.done()
     	}
@@ -72,6 +78,7 @@ module.exports = function runLogic(eventData) {
 
     	prompt() {
     		console.log("Test6");
+    		client.updateConversationState('type','account')
     		client.addTextResponse('Please select the type of account')
     		client.addTextResponse('Individual Savings Account,Defence Salary Account,Corporate Salary Account')
     		client.done()
@@ -167,6 +174,7 @@ module.exports = function runLogic(eventData) {
     		option4: 'branches',
     		option5: 'customerSupport',
     		option_pbaccounts: 'accounts',
+    		pbaccount_type_text: 'accounts',
     		option_pbdeposits: 'deposits',
     		option_pbloans: 'loans',
     		option_pbinsurance: 'insurance',
