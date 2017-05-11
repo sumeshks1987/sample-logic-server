@@ -9,7 +9,7 @@ module.exports = function runLogic(eventData) {
 
     	prompt() {
     		console.log("Test");
-    		client.addTextResponse('Hi - how can help you with IndusInd Bank related queries. Here are some quick links')
+    		client.addTextResponse('Hi - how can I help you with IndusInd Bank related queries. Here are some quick links')
     		client.addTextResponse('IFSC Code,Branches,Personal Banking,Corporate Banking,NRI Banking,Customer Support')
     		client.done()
     	}
