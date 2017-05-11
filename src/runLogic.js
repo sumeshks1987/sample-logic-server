@@ -16,13 +16,26 @@ module.exports = function runLogic(eventData) {
     	}
     })
 
+    const personalBanking = client.createStep({
+    	satisfied(){ return false },
+
+    	prompt() {
+    		console.log("Test1");
+    		client.addTextResponse('Choose from the below given options')
+    		client.addTextResponse('Accounts,Deposits,Loans,Insurance,Cards,Super Saver Pack,Investments,Foreign Exchange,Financial Inclusion')
+    		client.done()
+    	}
+    })
+
     client.runFlow({
     	streams: {
     		main: [response_greeting],
+    		personalBanking: [personalBanking],
     		response_greeting: [response_greeting],
     	},
     	classifications: {
-    		greeting: 'response_greeting'
+    		greeting: 'response_greeting',
+    		pb-option: 'personalBanking'
     	}
     })
 
