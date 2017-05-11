@@ -123,6 +123,7 @@ module.exports = function runLogic(eventData) {
 
     	prompt() {
     		console.log("Test10");
+    		console.log(client.getConversationState())
     		if(client.getConversationState().type == "account"){
     			client.addTextResponse('Visit this URL for more details - http://www.indusind.com/content/home/personal-banking/products/accounts/individual-savings-account.html')
     		} else {
