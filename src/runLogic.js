@@ -127,7 +127,9 @@ module.exports = function runLogic(eventData) {
     		if(client.getConversationState().type == "account"){
     			client.addTextResponse('Visit this URL for more details - http://www.indusind.com/content/home/personal-banking/products/accounts/individual-savings-account.html')
     		} else {
-    			client.addResponse('option_pbaccounts')
+    			client.updateConversationState('type','account')
+    			client.addTextResponse('Please select the type of account')
+    			client.addTextResponse('Individual Savings Account,Defence Salary Account,Corporate Salary Account')
     		}
     		client.done()
     	}
