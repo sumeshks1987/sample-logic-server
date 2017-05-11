@@ -27,15 +27,63 @@ module.exports = function runLogic(eventData) {
     	}
     })
 
+    const corporateBanking = client.createStep({
+    	satisfied(){ return false },
+
+    	prompt() {
+    		console.log("Test2");
+    		client.addTextResponse('Visit this URL for more details - http://www.indusind.com/corporate-banking.html')
+    		client.done()
+    	}
+    })
+
+    const nriBanking = client.createStep({
+    	satisfied(){ return false },
+
+    	prompt() {
+    		console.log("Test3");
+    		client.addTextResponse('Visit this URL for more details - http://www.indusind.com/nri-banking.html')
+    		client.done()
+    	}
+    })
+
+    const branches = client.createStep({
+    	satisfied(){ return false },
+
+    	prompt() {
+    		console.log("Test4");
+    		client.addTextResponse('Visit this URL for more details - http://www.indusind.com/content/home/branch-details.html')
+    		client.done()
+    	}
+    })
+
+    const customerSupport = client.createStep({
+    	satisfied(){ return false },
+
+    	prompt() {
+    		console.log("Test5");
+    		client.addTextResponse('Visit this URL for more details - http://www.indusind.com/footer/customer-care/contact-us.html')
+    		client.done()
+    	}
+    })
+
     client.runFlow({
     	streams: {
     		main: [response_greeting],
     		personalBanking: [personalBanking],
+    		corporateBanking: [corporateBanking],
+    		nriBanking: [nriBanking],
+    		branches: [branches],
+    		customerSupport: [customerSupport],
     		response_greeting: [response_greeting],
     	},
     	classifications: {
     		greeting: 'response_greeting',
-    		option1: 'personalBanking'
+    		option1: 'personalBanking',
+    		option2: 'corporateBanking',
+    		option3: 'nriBanking',
+    		option4: 'branches',
+    		option5: 'customerSupport',
     	}
     })
 
