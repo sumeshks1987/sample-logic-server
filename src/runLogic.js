@@ -111,6 +111,36 @@ module.exports = function runLogic(eventData) {
     	}
     })
 
+    const individualSavingsAccount = client.createStep({
+    	satisfied(){ return false },
+
+    	prompt() {
+    		console.log("Test10");
+    		client.addTextResponse('Visit this URL for more details - http://www.indusind.com/content/home/personal-banking/products/accounts/individual-savings-account.html')
+    		client.done()
+    	}
+    })
+
+    const defenceSalaryAccount = client.createStep({
+    	satisfied(){ return false },
+
+    	prompt() {
+    		console.log("Test11");
+    		client.addTextResponse('Visit this URL for more details - http://www.indusind.com/content/home/personal-banking/products/accounts/defence-accounts.html')
+    		client.done()
+    	}
+    })
+
+    const corporateSalaryAccount = client.createStep({
+    	satisfied(){ return false },
+
+    	prompt() {
+    		console.log("Test12");
+    		client.addTextResponse('Visit this URL for more details - http://www.indusind.com/content/home/personal-banking/products/accounts/corporate-account.html')
+    		client.done()
+    	}
+    })
+
     client.runFlow({
     	streams: {
     		main: [response_greeting],
@@ -123,6 +153,9 @@ module.exports = function runLogic(eventData) {
     		deposits: [deposits],
     		loans: [loans],
     		insurance: [insurance],
+    		individualSavingsAccount: [individualSavingsAccount],
+    		defenceSalaryAccount: [defenceSalaryAccount],
+    		corporateSalaryAccount: [corporateSalaryAccount],
     		response_greeting: [response_greeting],
     	},
     	classifications: {
@@ -136,6 +169,9 @@ module.exports = function runLogic(eventData) {
     		option_pbdeposits: 'deposits',
     		option_pbloans: 'loans',
     		option_pbinsurance: 'insurance',
+    		option_pbaccounts_isa: 'individualSavingsAccount',
+    		option_pbaccounts_dsa: 'defenceSalaryAccount',
+    		option_pbaccounts_csa: 'corporateSalaryAccount'
     	}
     })
 
