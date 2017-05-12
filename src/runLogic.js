@@ -90,8 +90,13 @@ module.exports = function runLogic(eventData) {
 
     	prompt() {
     		console.log("Test7");
-    		client.addTextResponse('Please select the type of deposit')
-    		client.addTextResponse('Fixed Deposit,Sweep In/Out Deposit,Regular Recurring Deposit,Senior Citizen Scheme,Young Saver Deposit,Deposit Plus,Value Added Recurring Deposit')
+    		if(client.getConversationState().type == "deposit"){
+    			client.addTextResponse('Visit this URL for more details - http://www.indusind.com/')
+    		} else {
+    			client.updateConversationState('type','deposit')
+    			client.addTextResponse('Please select the type of deposit')
+    			client.addTextResponse('Fixed Deposit,Sweep In/Out Deposit,Regular Recurring Deposit,Senior Citizen Scheme,Young Saver Deposit,Deposit Plus,Value Added Recurring Deposit')
+    		}
     		client.done()
     	}
     })
