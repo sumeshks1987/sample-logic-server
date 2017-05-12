@@ -91,7 +91,7 @@ module.exports = function runLogic(eventData) {
     	prompt() {
     		console.log("Test7");
     		const conversation = client.getConversation()
-    		console.log(conversation)
+    		console.log(client.getMessagePart())
     		if(client.getConversationState().type == "deposit"){
     			client.addTextResponse('Visit this URL for more details - http://www.indusind.com/')
     		} else {
