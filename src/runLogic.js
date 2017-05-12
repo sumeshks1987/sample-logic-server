@@ -92,7 +92,7 @@ module.exports = function runLogic(eventData) {
     		console.log("Test7");
     		const conversation = client.getMessagePart()['content']
     		if(client.getConversationState().type == "deposit"){
-    			client.addTextResponse('Visit this URL for more details on' + conversation + ' - http://www.indusind.com/')
+    			client.addTextResponse('Visit this URL for more details on ' + conversation + ' - http://www.indusind.com/')
     		} else {
     			client.updateConversationState('type','deposit')
     			client.addTextResponse('Please select the type of deposit')
